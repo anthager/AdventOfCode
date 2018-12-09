@@ -9,6 +9,8 @@
 //		// do something with e.Value
 //	}
 //
+// This is a copy of the std lib linked list but I wanted it to be circular so I made it that way try to stop me
+
 package coollist
 
 // Element is an element of a linked list.
@@ -29,7 +31,7 @@ type Element struct {
 
 // Next returns the next list element or nil.
 func (e *Element) Next() *Element {
-	if p := e.next; e.list != nil {
+	if p := e.next; e.list != nil && p != &e.list.root {
 		return p
 	}
 	return e.list.Front()
