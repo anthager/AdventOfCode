@@ -23,11 +23,12 @@ func check(e error) {
 }
 
 func getData() (int, int) {
-	dat, err := ioutil.ReadFile("/Users/antonhagermalm/Projects/advent-of-code/9/data2")
+	dat, err := ioutil.ReadFile("/Users/antonhagermalm/Projects/advent-of-code/9/data")
 	check(err)
 	str := strings.Split(string(dat), " ")
 	players, _ := strconv.Atoi(string(str[0]))
 	lastMarble, _ := strconv.Atoi(string(str[6]))
+	lastMarble *= 100
 	return players, lastMarble
 }
 
@@ -36,8 +37,38 @@ func main() {
 }
 
 func one() {
-	_, lastmarble := getData()
-	createList(lastmarble)
+	nrPlayers, lastMarble := getData()
+	l := coollist.New()
+	l.PushBack(0)
+	current := l.Front()
+	players := make([]int, nrPlayers)
+	for i := 1; i <= lastMarble; i++ {
+		if i%23 != 0 {
+			current = l.InsertAfter(i, current.Next())
+			continue
+		}
+		current = current.Prev().Prev().Prev().Prev().Prev().Prev()
+		removed := l.Remove(current.Prev()).(int)
+		// fmt.Println(len(players))
+		// fmt.Println((i - 1) % nrPlayers)
+		players[(i-1)%nrPlayers] += (i + removed)
+	}
+
+	largest := 0
+	for _, v := range players {
+		if v > largest {
+			largest = v
+		}
+	}
+	fmt.Println(largest)
+
+	// d := l.Front()
+	// for i := 0; i < l.Len(); i++ {
+	// 	fmt.Print(d.Value, " ")
+	// 	d = d.Next()
+	// }
+	// fmt.Println(" ")
+
 }
 
 func two() {
@@ -46,18 +77,6 @@ func two() {
 }
 
 func createList(lastMarble int) {
-	l := coollist.New()
-	current := l.Front()
-
-	for i := 0; i <= lastMarble; i++ {
-		l.InsertAfter(i, current.Next())
-		current = current.Next().Next()
-	}
-	d := l.Front()
-	for i := 0; i < l.Len(); i++ {
-		fmt.Print(d.Value)
-		d = d.Next()
-	}
 
 }
 
