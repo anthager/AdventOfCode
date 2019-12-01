@@ -1,4 +1,4 @@
-## Avent Of Code 2k18 in Go
+## Avent Of Code
 
 
                                .-(_)
