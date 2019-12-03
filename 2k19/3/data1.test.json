@@ -1,0 +1,16 @@
+{
+  "data": [
+    [
+      { "direction": "R", "distance": 8 },
+      { "direction": "U", "distance": 5 },
+      { "direction": "L", "distance": 5 },
+      { "direction": "D", "distance": 3 }
+    ],
+    [
+      { "direction": "U", "distance": 7 },
+      { "direction": "R", "distance": 6 },
+      { "direction": "D", "distance": 4 },
+      { "direction": "L", "distance": 4 }
+    ]
+  ]
+}

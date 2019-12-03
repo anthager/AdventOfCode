@@ -1,0 +1,25 @@
+{
+  "data": [
+    [
+      { "direction": "R", "distance": 75 },
+      { "direction": "D", "distance": 30 },
+      { "direction": "R", "distance": 83 },
+      { "direction": "U", "distance": 83 },
+      { "direction": "L", "distance": 12 },
+      { "direction": "D", "distance": 49 },
+      { "direction": "R", "distance": 71 },
+      { "direction": "U", "distance": 7 },
+      { "direction": "L", "distance": 72 }
+    ],
+    [
+      { "direction": "U", "distance": 62 },
+      { "direction": "R", "distance": 66 },
+      { "direction": "U", "distance": 55 },
+      { "direction": "R", "distance": 34 },
+      { "direction": "D", "distance": 71 },
+      { "direction": "R", "distance": 55 },
+      { "direction": "D", "distance": 58 },
+      { "direction": "R", "distance": 83 }
+    ]
+  ]
+}
